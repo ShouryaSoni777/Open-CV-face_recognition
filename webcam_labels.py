@@ -2,12 +2,17 @@ import cv2
 import os
 import time
 import shutil
+import pathlib
 
 cap = cv2.VideoCapture(0)
 
-check_dir = os.path.join("/A.I face recognition","Real Time Face Recognition")
+# check_dir = os.path.join("/A.I face recognition","Real Time Face Recognition")
 
-dirs = os.listdir(check_dir)
+check_dir = pathlib.Path().absolute()
+
+path_join = os.path.join(check_dir,"Real Time Face Recognition")
+
+dirs = os.listdir(path_join)
 
 if "webcam_labels" not in dirs:
     os.mkdir("Real Time Face Recognition\webcam_labels")
